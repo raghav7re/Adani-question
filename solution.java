@@ -5,6 +5,23 @@
 * 2D list created above and column Index and return sorted 2D list.
 * */
 
+/*
+5
+7
+[81, 53, 95, 60, 87, 77, 81]
+[77, 88, 44, 39, 8, 44, 1]
+[56, 47, 66, 55, 81, 0, 43]
+[3, 61, 97, 51, 62, 98, 96]
+[78, 38, 75, 98, 36, 56, 11]
+
+[3, 61, 97, 51, 62, 98, 96]
+[56, 47, 66, 55, 81, 0, 43]
+[77, 88, 44, 39, 8, 44, 1]
+[78, 38, 75, 98, 36, 56, 11]
+[81, 53, 95, 60, 87, 77, 81]
+
+*/
+
 import java.util.*;
 
 public class solution {
@@ -16,38 +33,20 @@ public class solution {
     createmat(mat,row,col);
     colsort(mat,row,col);
     }
+    public  static void print(int [] [] r)
+    {
+        System.out.println(" ");
+        for (int [] q:r
+        ) {
+            System.out.println(Arrays.toString(q));
+        }
+
+    }
     public static void colsort(int [][]mat,int row,int col)
     {
-        int [][] t=new int[col][row];
-        for(int i=0;i<col;i++){
-            for(int j=0;j<row;j++){
-                t[i][j]=mat[j][i];
-            }
-        }
-        System.out.println(" ");
-        for (int [] q:t
-        ) {
-            System.out.println(Arrays.toString(q));
-        }
-        for (int [] q:t
-             ) {
-            Arrays.sort(q);
-
-        }
-        System.out.println(" ");
-        for (int [] q:t
-        ) {
-            System.out.println(Arrays.toString(q));
-        }
-        for(int i=0;i<row;i++){
-            for(int j=0;j<col;j++){
-                mat[i][j]=t[j][i];
-            }
-        }
-        for (int [] q:mat
-        ) {
-            System.out.println(Arrays.toString(q));
-        }
+       // int [][] t= (int[][]) Arrays.stream(mat).sorted((a)->Comparator.comparingInt().toArray();
+        Arrays.sort(mat, (a, b) -> Integer.compare(a[0], b[0]));
+        print(mat);
 
     }
     public static void createmat(int [][] mat,int row,int col)
