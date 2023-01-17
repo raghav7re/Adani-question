@@ -6,19 +6,20 @@
 * */
 
 /*
+4
 5
-7
-[81, 53, 95, 60, 87, 77, 81]
-[77, 88, 44, 39, 8, 44, 1]
-[56, 47, 66, 55, 81, 0, 43]
-[3, 61, 97, 51, 62, 98, 96]
-[78, 38, 75, 98, 36, 56, 11]
+[79, 40, 77, 19, 27]
+[9, 44, 58, 40, 55]
+[12, 14, 92, 59, 21]
+[69, 97, 69, 3, 61]
+2
 
-[3, 61, 97, 51, 62, 98, 96]
-[56, 47, 66, 55, 81, 0, 43]
-[77, 88, 44, 39, 8, 44, 1]
-[78, 38, 75, 98, 36, 56, 11]
-[81, 53, 95, 60, 87, 77, 81]
+[9, 44, 58, 40, 55]
+[69, 97, 69, 3, 61]
+[79, 40, 77, 19, 27]
+[12, 14, 92, 59, 21]
+
+Process finished with exit code 0
 
 */
 
@@ -31,7 +32,8 @@ public class solution {
         int col=sc.nextInt();
         int [][] mat=new int[row][col];
     createmat(mat,row,col);
-    colsort(mat,row,col);
+    int e=sc.nextInt();
+    colsort(mat,row,col,e);
     }
     public  static void print(int [] [] r)
     {
@@ -42,10 +44,10 @@ public class solution {
         }
 
     }
-    public static void colsort(int [][]mat,int row,int col)
+    public static void colsort(int [][]mat,int row,int col,int e)
     {
-       // int [][] t= (int[][]) Arrays.stream(mat).sorted((a)->Comparator.comparingInt().toArray();
-        Arrays.sort(mat, (a, b) -> Integer.compare(a[0], b[0]));
+
+        Arrays.sort(mat, (a, b) -> Integer.compare(a[e], b[e]));
         print(mat);
 
     }
